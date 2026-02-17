@@ -7,6 +7,10 @@ body{
 h1,h2,h3,p{
     text-align: center;
 }
+.input{
+    display: flex;
+    justify-content: center;
+}
 #crypt{
     display: flex;
     justify-content: space-evenly;
