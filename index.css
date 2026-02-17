@@ -15,6 +15,10 @@ h1,h2,h3,p{
     display: flex;
     justify-content: space-evenly;
 }
-.crypt{
+.crypt,#result{
+    display: flex;
+    align-items: center;
+    padding: 16px;
     border: solid;
+    height: 16px;
 }

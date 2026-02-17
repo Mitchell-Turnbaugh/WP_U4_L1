@@ -6,7 +6,7 @@
     <head>
         <title>Caesar Cipher</title>
         <link rel="stylesheet" href="index.css">
-        <script scr = "index.js"></script>
+        <script src = "index.js"></script>
     </head>
     <body>
         <h1>Caesar Cipher</h1>
@@ -21,8 +21,16 @@
         </div>
         <br>
         <div id = "crypt">
-            <div class = "crypt"><p>Encrypt</p></div>
-            <div class = "crypt"><p>Decrypt</p></div>
+            <div class = "crypt" onclick = "encrypt()">
+                <p>Encrypt</p>
+            </div>
+            <div class = "crypt">
+                <p>Decrypt</p>
+            </div>
+        </div>
+        <br>
+        <h3>The result will appear here</h3>
+        <div id = "result">
         </div>
     </body>
 </html>
