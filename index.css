@@ -3,8 +3,9 @@ body{
     background-color: #8878C3;
     flex-direction: column;
     justify-content: center;
+    min-height: 100vh;
 }
-h1,h2,h3,p,a{
+h1,h2,h3,p{
     text-align: center;
 }
 .input{
@@ -24,4 +25,9 @@ h1,h2,h3,p,a{
     padding: 16px;
     border: solid;
     height: 16px;
+}
+a{
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
 }
