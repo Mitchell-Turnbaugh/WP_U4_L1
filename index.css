@@ -5,7 +5,12 @@ body{
     justify-content: center;
     min-height: 100vh;
 }
-h1,h2,h3,p{
+#julius_caesar{
+    width: 10%;
+    border-radius: 50%;
+    align-self: center;
+}
+h1,h2,h3,p,a{
     text-align: center;
 }
 .input{
@@ -25,9 +30,4 @@ h1,h2,h3,p{
     padding: 16px;
     border: solid;
     height: 16px;
-}
-a{
-    position: absolute;
-    left: 50%;
-    bottom: 1%;
 }
