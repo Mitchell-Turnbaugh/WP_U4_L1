@@ -9,8 +9,10 @@ function encrypt(){
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
     for(i of input){
+        i = i.toLowerCase()
         if(alphabet.includes(i)){
-            newString += alphabet[(alphabet.indexOf(i) + shift) % 26];
+            const index = (alphabet.indexOf(i) + shift) % 26;
+            newString += alphabet[index];
         }else{
             newString += i;
         }
@@ -29,8 +31,13 @@ function decrypt(){
     let newString = "";
     for(i of input){
         if(alphabet.includes(i)){
-            console.log((alphabet.indexOf(i) - shift) % 26)
-            newString += alphabet[(alphabet.indexOf(i) - shift) % 26];
+            const index = (alphabet.indexOf(i) - shift) % 26;
+            console.log(index);
+            if(index >= 0){
+                newString += alphabet[index];
+            }else{
+                newString += alphabet[26 + index];
+            }
         }else{
             newString += i;
         }
