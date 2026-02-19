@@ -9,10 +9,14 @@ function encrypt(){
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
     for(i of input){
-        i = i.toLowerCase()
+        const lowerCase = i == i.toLowerCase();
         if(alphabet.includes(i)){
             const index = (alphabet.indexOf(i) + shift) % 26;
-            newString += alphabet[index];
+            if(lowerCase){
+                newString += alphabet[index];
+            }else{
+                newString += alphabet[index].toUpperCase();
+            }
         }else{
             newString += i;
         }
