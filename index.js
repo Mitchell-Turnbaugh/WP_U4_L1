@@ -44,3 +44,7 @@ function decrypt(){
     }
     result.textContent = newString;
 }
+function clearResult(){
+    const result = document.getElementById("result_text");
+    result.textContent = "";
+}
