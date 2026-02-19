@@ -11,7 +11,7 @@ function encrypt(){
     for(i of input){
         const lowerCase = i == i.toLowerCase();
         if(alphabet.includes(i.toLowerCase())){
-            const index = (alphabet.indexOf(i) + shift) % 26;
+            const index = (alphabet.indexOf(i.toLowerCase()) + shift) % 26;
             if(lowerCase){
                 newString += alphabet[index];
             }else{
@@ -36,7 +36,7 @@ function decrypt(){
     for(i of input){
         const lowerCase = i == i.toLowerCase();
         if(alphabet.includes(i.toLowerCase())){
-            const index = (alphabet.indexOf(i) - shift) % 26;
+            const index = (alphabet.indexOf(i.toLowerCase()) - shift) % 26;
             if(index >= 0){
                 if(lowerCase){
                     newString += alphabet[index];
@@ -47,7 +47,7 @@ function decrypt(){
                 if(lowerCase){
                     newString += alphabet[26 + index];
                 }else{
-                    newString += alphabet[26 + index];
+                    newString += alphabet[26 + index].toUpperCase();
                 }
             }
         }else{
