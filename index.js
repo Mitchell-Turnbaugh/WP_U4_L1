@@ -29,6 +29,7 @@ function encrypt(){
     if(!validate(shift,result)){
         return;
     }
+    shift = Number(shift);
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
     for(i of input){
