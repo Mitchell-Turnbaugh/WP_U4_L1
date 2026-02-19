@@ -1,6 +1,6 @@
 body{
     display: flex;
-    background-color: #8878C3;
+    background-color: orange;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
@@ -17,7 +17,7 @@ h1,h2,h3,p,a{
     display: flex;
     justify-content: center;
 }
-#crypt{
+.row{
     display: flex;
     justify-content: space-evenly;
 }

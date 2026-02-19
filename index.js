@@ -1,22 +1,33 @@
-function encrypt(){
-    const input = document.getElementsByTagName("input")[0].value;
-    let shift = document.getElementsByTagName("input")[1].value;
-    const result = document.getElementById("result_text");
+function validate(shift,result){
     if(shift === ""){
         result.textContent = "You must enter a number";
-        return;
+        result.style.color = "red";
+        return false;
     }
     shift = Number(shift);
     if(!Number.isInteger(shift)){
         result.textContent = "Shift number must be an integer";
-        return;
+        result.style.color = "red";
+        return false;
     }
     if(shift < 0){
         result.textContent = "Number must not be negative";
-        return;
+        result.style.color = "red";
+        return false;
     }
     if(shift > 26){
         result.textContent = "Number must not be greater than 26";
+        result.style.color = "red";
+        return false;
+    }
+    return true;
+}
+function encrypt(){
+    const input = document.getElementsByTagName("input")[0].value;
+    let shift = document.getElementsByTagName("input")[1].value;
+    const result = document.getElementById("result_text");
+    if(!validate(shift,result)){
+        return;
     }
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
@@ -39,21 +50,8 @@ function decrypt(){
     const input = document.getElementsByTagName("input")[0].value;
     let shift = document.getElementsByTagName("input")[1].value;
     const result = document.getElementById("result_text");
-    if(shift === ""){
-        result.textContent = "You must enter a number";
+    if(!validate(shift,result)){
         return;
-    }
-    shift = Number(shift);
-    if(!Number.isInteger(shift)){
-        result.textContent = "Shift number must be an integer";
-        return;
-    }
-    if(shift < 0){
-        result.textContent = "Number must not be negative";
-        return;
-    }
-    if(shift > 26){
-        result.textContent = "Number must not be greater than 26";
     }
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
