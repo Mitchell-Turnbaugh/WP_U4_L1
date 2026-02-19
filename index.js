@@ -1,10 +1,22 @@
 function encrypt(){
     const input = document.getElementsByTagName("input")[0].value;
-    const shift = Number(document.getElementsByTagName("input")[1].value);
+    let shift = document.getElementsByTagName("input")[1].value;
     const result = document.getElementById("result_text");
+    if(shift === ""){
+        result.textContent = "You must enter a number";
+        return;
+    }
+    shift = Number(shift);
     if(!Number.isInteger(shift)){
         result.textContent = "Shift number must be an integer";
         return;
+    }
+    if(shift < 0){
+        result.textContent = "Number must not be negative";
+        return;
+    }
+    if(shift > 26){
+        result.textContent = "Number must not be greater than 26";
     }
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
@@ -25,11 +37,23 @@ function encrypt(){
 }
 function decrypt(){
     const input = document.getElementsByTagName("input")[0].value;
-    const shift = Number(document.getElementsByTagName("input")[1].value);
+    let shift = document.getElementsByTagName("input")[1].value;
     const result = document.getElementById("result_text");
+    if(shift === ""){
+        result.textContent = "You must enter a number";
+        return;
+    }
+    shift = Number(shift);
     if(!Number.isInteger(shift)){
         result.textContent = "Shift number must be an integer";
         return;
+    }
+    if(shift < 0){
+        result.textContent = "Number must not be negative";
+        return;
+    }
+    if(shift > 26){
+        result.textContent = "Number must not be greater than 26";
     }
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newString = "";
@@ -58,5 +82,9 @@ function decrypt(){
 }
 function clearResult(){
     const result = document.getElementById("result_text");
+    const input = document.getElementsByTagName("input")[0];
+    const shift = document.getElementsByTagName("input")[1];
     result.textContent = "";
+    input.value = "";
+    shift.value = "";
 }
